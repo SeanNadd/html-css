@@ -2,34 +2,38 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="src/challenge-style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Section 2 - Challenge #2</title>
   </head>
   <body>
-    <article>
-      <h2>Converse Chuck Taylor All Star Low Top</h2>
+    <article id="main-article" class="main-article">
+      <h2 id="title-main" class="title">Converse Chuck Taylor All Star Low Top</h2>
       <img
-        src="src/challenges.jpg"
+        src="src/img/challenges.jpg"
         alt="Girls legs wearing some shoes"
         width="300"
         height="300"
+        class="image-girl"
       />
-      <p><em>$65.00</em></p>
-      <p>Free Shipping</p>
-      <p>Ready to dress up or down - Blah blah blah</p>
+      <p id="price" class="promotional">$65.00</p>
+      <p id="shipping" class="promotional">Free Shipping</p>
+      <p id="marketing-text" class="promotional">
+        Ready to dress up or down - Blah blah blah
+      </p>
       <a href="https://www.converse.com/es/en/go?" target="_blank"
         >More Information &rarr;</a
-      >
+        class="more-info-link"
+        >
 
-      <h3>Product Details</h3>
-      <ul>
-        <li>Lightweight</li>
-        <li>Comfortable</li>
-        <li>Iconic</li>
+      <h3  class="title">Product Details</h3>
+      <ul id="perk-list">
+        <li class="perk-item">Lightweight</li>
+        <li class="perk-item">Comfortable</li>
+        <li class="perk-item">Iconic</li>
       </ul>
 
-      <input type="button" value="Add to cart" />
+      <input type="button" value="Add to cart" id="cart-button"/>
     </article>
   </body>
 </html>

@@ -1,0 +1,59 @@
+body {
+  border: 5px solid black;
+  font-family: sans-serif;
+}
+
+.title {
+  text-transform: uppercase;
+}
+
+#title-main {
+  background-color: #ddd;
+  text-align: center;
+  font-size: 24px;
+}
+
+#price {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#shipping {
+  text-transform: uppercase;
+  font-size: 10px;
+}
+
+a:link {
+  color: black;
+}
+
+a:visited {
+  color: black;
+}
+
+a:hover {
+  color: black;
+  text-decoration: none;
+}
+
+/* when a link has been clicked*/
+a:active {
+  background-color: black;
+}
+
+#cart-button {
+  background-color: black;
+  color: white;
+  text-transform: uppercase;
+  font-size: 24px;
+  border: none;
+}
+
+#cart-button:hover {
+  color: black;
+  background-color: white;
+}
+
+#perk-list {
+  list-style-type: square;
+}

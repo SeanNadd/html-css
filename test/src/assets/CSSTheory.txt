@@ -1,0 +1,27 @@
+1) What happens if multiple selectors point to the same element?
+
+
+CSS resolves the priority like this (these is used for conflicting declarations):
+a) Declarations marked with "!important!
+b) in-line styles
+c) by id
+  a.1) if many ids, then the last id selector
+d) by class/pseudoclass
+  b.2) Same as id selectors if multiple
+e) by element
+  c.3) Same as the id selectors if multiple
+f) Universal selector 
+
+
+
+If same selectors with same hierarchy... the "cascade" rule applies. Meaning that the last declaration will apply.
+
+
+
+===================================
+
+Inheritance:
+
+Global selector: Lowest prio but applies styling regardless of Inheritance.
+
+Element hierrarchy establishes the inheritance pattern

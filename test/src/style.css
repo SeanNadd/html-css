@@ -1,0 +1,139 @@
+/*
+We are not allowed to repeat ID names in HTML and thus we cannot reuse a selector in css.
+
+To then reuse we need to use classes.
+*/
+
+h1,
+h2,
+h3,
+h4,
+p,
+li {
+  font-family: sans-serif;
+  color: #444;
+}
+
+h1,
+h2,
+h3 {
+  color: #1098ad;
+}
+
+h1 {
+  size: 26px;
+  text-transform: uppercase;
+  font-style: italic;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+/* footer p {
+  font-size: 16 px;
+} */
+
+#copyright {
+  font-size: 16px;
+}
+
+p {
+  font-size: 22px;
+  line-height: 1.5;
+}
+/* The em and strong tags are being overriten because of inheritance*/
+h3 {
+  font-size: 30px;
+}
+
+h4 {
+  font-size: 20px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+li {
+  font-size: 20px;
+}
+
+/* This is a nested element selector. At this point, it's better to used selectors like ID
+article header p {
+  font-style: italic;
+}
+*/
+
+#author {
+  font-style: italic;
+  font-size: 18px;
+}
+
+.related-author {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.related {
+  list-style-type: none;
+}
+
+/*
+in real CSS coding, IDs are almost never used to identify elements.
+This is to decouple the HTML and not have to do changes back and forth.
+*/
+
+.main-header {
+  background-color: #f7f7f7;
+}
+
+aside {
+  background-color: #f7f7f7;
+  border: 10px, 5px;
+  border-top: 5px solid #1098ad;
+  border-bottom: 5px solid #1098ad;
+}
+
+li:first-child {
+  /* The thing with the colon is called a pseudo class  */
+  font-weight: bold;
+}
+
+li:nth-child(2) {
+  /* This is the way to select a specific element by it's "ID" on css
+  another options are: odd, evenj, */
+  font-style: italic;
+}
+
+/*
+article p:first-child {
+  This will NOT select the first p element on the article element, but it's going to look for the first element in the article overall
+  Since that element is not a <p> the selector returns nothing;]
+  color: black;
+}
+*/
+
+/*. Link Styling 
+These states are always defined in this exact order.s
+
+*/
+
+a:link {
+  color: #1098ad;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #1098ad;
+}
+
+a:hover {
+  color: orangered;
+  font-weight: bold;
+  text-decoration: underline dotted orangered;
+}
+
+/* when a link has been clicked*/
+a:active {
+  background-color: black;
+  font-style: italic;
+}

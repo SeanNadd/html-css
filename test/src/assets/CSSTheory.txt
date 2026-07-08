@@ -25,3 +25,164 @@ Inheritance:
 Global selector: Lowest prio but applies styling regardless of Inheritance.
 
 Element hierrarchy establishes the inheritance pattern
+
+
+====================================
+
+CSS Box Model:
+
+Every HTML element can be thought of as a rectangular box. The CSS box model
+describes the layers that make up that box and how the browser calculates the
+space an element occupies on the page.
+
+The box model has four main parts, from the inside out:
+
+1) Content
+
+The content area is the innermost part of the box. It contains the actual text,
+image, video, form control, or other content inside the element.
+
+When you set width and height in regular CSS, you are usually setting the size
+of the content area only.
+
+Example:
+
+.box {
+  width: 200px;
+  height: 100px;
+}
+
+This means the content area is 200px wide and 100px tall.
+
+
+2) Padding
+
+Padding is the space between the content and the border. It adds internal space
+inside the element.
+
+Padding makes the element larger because it pushes the border outward from the
+content.
+
+Example:
+
+.box {
+  width: 200px;
+  padding: 20px;
+}
+
+The content is still 200px wide, but the element now has 20px of space on the
+left and 20px of space on the right.
+
+Total visible width so far:
+200px content + 20px left padding + 20px right padding = 240px
+
+
+3) Border
+
+The border wraps around the padding and content. It is part of the visible size
+of the element.
+
+Example:
+
+.box {
+  width: 200px;
+  padding: 20px;
+  border: 5px solid black;
+}
+
+Total visible width:
+200px content
++ 20px left padding
++ 20px right padding
++ 5px left border
++ 5px right border
+= 250px
+
+
+4) Margin
+
+Margin is the space outside the border. It creates distance between this element
+and other elements around it.
+
+Margin does not count as part of the element's visible box, but it does affect
+the amount of space the element takes up in the layout.
+
+Example:
+
+.box {
+  width: 200px;
+  padding: 20px;
+  border: 5px solid black;
+  margin: 10px;
+}
+
+Total layout width:
+200px content
++ 40px horizontal padding
++ 10px horizontal border
++ 20px horizontal margin
+= 270px
+
+
+Important formula:
+
+Total element width =
+content width
++ left padding + right padding
++ left border + right border
++ left margin + right margin
+
+Total element height =
+content height
++ top padding + bottom padding
++ top border + bottom border
++ top margin + bottom margin
+
+
+box-sizing:
+
+By default, CSS uses:
+
+box-sizing: content-box;
+
+This means width and height only apply to the content area. Padding and border
+are added on top of that size.
+
+Many developers prefer:
+
+box-sizing: border-box;
+
+This means width and height include the content, padding, and border. The margin
+is still outside the element and is not included.
+
+Example:
+
+.box {
+  box-sizing: border-box;
+  width: 200px;
+  padding: 20px;
+  border: 5px solid black;
+}
+
+With border-box, the total visible width stays 200px. The browser fits the
+content, padding, and border inside that 200px.
+
+
+Common reset:
+
+* {
+  box-sizing: border-box;
+}
+
+This makes layouts easier to reason about because the width you set is usually
+the visible width you get.
+
+
+Summary:
+
+- Content is the actual material inside the element.
+- Padding is empty space inside the element, around the content.
+- Border surrounds the padding and content.
+- Margin is empty space outside the element, separating it from other elements.
+- content-box adds padding and border to the declared width and height.
+- border-box includes padding and border inside the declared width and height.

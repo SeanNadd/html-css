@@ -1,8 +1,38 @@
 /*
+Collapsing margins happen when vertical margins from neighboring block elements
+combine into one margin instead of adding together. This often occurs between
+headings, paragraphs, lists, or a parent and its first/last child; the larger
+margin wins. Padding, borders, flex/grid layout, or overflow can prevent margins
+from collapsing.
+*/
+
+* {
+  margin: 0;
+  padding 0;
+  border: 0;
+} 
+
+/*
 We are not allowed to repeat ID names in HTML and thus we cannot reuse a selector in css.
 
 To then reuse we need to use classes.
 */
+
+/*
+in real CSS coding, IDs are almost never used to identify elements.
+This is to decouple the HTML and not have to do changes back and forth.
+*/
+
+.main-header {
+  background-color: #f7f7f7;
+  padding: 20px 40px;
+  margin-bottom: 60px;
+  height: 80px;
+}
+
+.second-header  {
+  margin-bottom: 40px;
+}
 
 h1,
 h2,
@@ -28,6 +58,12 @@ h1 {
 
 h2 {
   font-size: 40px;
+  margin-bottom: 30px;
+}
+
+ol, ul{
+  margin-left: 50px;
+  margin-bottom: 20px;
 }
 
 /* footer p {
@@ -41,10 +77,12 @@ h2 {
 p {
   font-size: 22px;
   line-height: 1.5;
+  margin-bottom: 15px;
 }
 /* The em and strong tags are being overriten because of inheritance*/
 h3 {
   font-size: 30px;
+  margin-bottom: 20px;
 }
 
 h4 {
@@ -55,6 +93,11 @@ h4 {
 
 li {
   font-size: 20px;
+  margin-bottom: 10px;
+}
+
+li:last-child {
+  margin-bottom: 0px;
 }
 
 /* This is a nested element selector. At this point, it's better to used selectors like ID
@@ -66,6 +109,7 @@ article header p {
 #author {
   font-style: italic;
   font-size: 18px;
+  margin-bottom: 15px; 
 }
 
 .related-author {
@@ -77,20 +121,13 @@ article header p {
   list-style-type: none;
 }
 
-/*
-in real CSS coding, IDs are almost never used to identify elements.
-This is to decouple the HTML and not have to do changes back and forth.
-*/
-
-.main-header {
-  background-color: #f7f7f7;
-}
-
 aside {
   background-color: #f7f7f7;
   border: 10px, 5px;
   border-top: 5px solid #1098ad;
   border-bottom: 5px solid #1098ad;
+  padding: 50px 0px;
+  width: 600px;
 }
 
 li:first-child {
@@ -136,4 +173,16 @@ a:hover {
 a:active {
   background-color: black;
   font-style: italic;
+}
+
+
+.post-image{
+  width: 100%;
+  height: auto;
+}
+
+.container{
+  width: 900px;
+  margin-left: auto;
+  margin-right: auto;
 }
